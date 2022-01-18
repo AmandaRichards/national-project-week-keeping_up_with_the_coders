@@ -4,7 +4,7 @@ import * as functionality from "../resourcesResources/resourcesModule.js";
 const routerResources = express.Router();
 
 routerResources.get("/", async function (req, res) {
-  const responseResources = await functionality.getAllVideos();
+  const responseResources = await functionality.getAllResources();
   return res.json({ success: true, payload: { responseResources } });
 });
 
