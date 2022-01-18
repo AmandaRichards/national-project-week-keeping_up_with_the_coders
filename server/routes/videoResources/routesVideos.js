@@ -1,11 +1,10 @@
-import { Router } from "express";
 import express from "express";
-import * as functionality from "../videoResources/videoModules.js";
+import * as functionality from "./videoModule.js";
 const routerVideo = express.Router();
 
 routerVideo.get("/", async function (req, res) {
-  const responseVideos = await functionality.getAllVideos();
-  return res.json({ success: true, payload: { responseVideos } });
+  const responseVideo = await functionality.getAllVideo();
+  return res.json({ success: true, payload: { responseVideo } });
 });
 
 export default routerVideo;
