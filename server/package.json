@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    // "start": "node -r dotenv/config ./bin/www",
-    "db-create-table": "nodemon -r dotenv/config ./server/DB/scripts/createTable.js"
+    "start": "node -r dotenv/config ./bin/www",
+    "db-create-table": "node -r dotenv/config ./DB/scripts/createTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
