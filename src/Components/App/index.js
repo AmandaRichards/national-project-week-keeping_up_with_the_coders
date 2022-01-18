@@ -1,11 +1,10 @@
 import * as React from "react";
-import { BrowserRouter, Route, } from 'react-router-dom';
+// import { BrowserRouter, Route, } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 import './App.css';
 import HomePage from '../HomePage/index';
-import NameInput from '../Login/NameInput';
-import PasswordInput from "../Login/PasswordInput";
-import SubmitButton from "../Login/SubmitButton";
-import Input from "../Login/index.js";
+import Login from "../Login/index.js";
+
 
 function App() {
   return (
@@ -13,15 +12,16 @@ function App() {
       <h1>Resource.log()</h1>
 
       
-      {/* <BrowserRouter> */}
-        <Input />
-  
-          {/* <Route path="/HomePage"> */}
-            <HomePage />
-          
-         
-      
-      {/* </BrowserRouter> */}
+   <Routes>
+        <Route path="/" element={<Login />} />
+        {/* <Route exact path="/">
+  {loggedIn ? <Navigate to="/homepage" /> : <HomePage />}
+</Route> */}
+        <Route path="homepage" element={<HomePage />} />
+     
+      </Routes>
+   
+
     </div>
   );
 }
