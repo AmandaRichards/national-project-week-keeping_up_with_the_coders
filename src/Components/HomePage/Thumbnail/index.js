@@ -1,6 +1,6 @@
 function Thumbnail({title, url}){
  return (<div>
-    <img src={url}/>
+    <img src={url} alt="alt"/>
     <p>{title}</p>
 </div> )
 }
