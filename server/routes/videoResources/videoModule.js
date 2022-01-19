@@ -1,10 +1,5 @@
 import query from "../../DB/index.js";
 
-<<<<<<< HEAD
-export async function getAllVideo() {
-  const data = await query("SELECT * FROM videos;");
-  return data.rows;
-=======
 export async function getAllVideos() {
   const data = await query("SELECT * FROM videos;");
   return data.rows;
@@ -28,5 +23,4 @@ export async function deleteVideosByID(id) {
 
 export async function deleteAllVideos() {
   const data = await query("DELETE FROM videos;");
->>>>>>> 90f7cf46c857775728dc9d477892cdb366e44879
 }
