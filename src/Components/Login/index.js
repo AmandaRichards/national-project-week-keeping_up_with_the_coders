@@ -41,9 +41,8 @@ function Login() {
     
 
     <div>
-    <h1>Resource.log()</h1>
     <form value={loggedIn}>
-    <input onChange={handleNameChange} value={name} placeholder="enter your name"/>
+      <input onChange={handleNameChange} value={name} placeholder="enter your name"/>
       <input onChange={handleChange} value={password} />
       <button onClick={handleSubmit}>Submit</button>
     </form>
