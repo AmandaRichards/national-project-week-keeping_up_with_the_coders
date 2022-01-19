@@ -22,7 +22,7 @@ routerVideo.post("/", async function (req, res) {
 routerVideo.delete("/:id", async function (req, res) {
   let id = Number(req.params.id);
   const data = await functionality.deleteVideosByID(id);
-  return res.json({ success: true, payload: { data } })
+  return res.json({ success: true, payload: { data } });
 })
 
 // delete all videos
