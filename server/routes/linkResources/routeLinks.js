@@ -11,7 +11,7 @@ routerLink.get("/", async function (req, res) {
 export default routerLink;
 
 // post links 
-routerLink.post("/links", async function (req, res) {
+routerLink.post("/", async function (req, res) {
   const body = req.body;
   console.log(body);
   const responseLinks = await functionality.postLinks(body);
