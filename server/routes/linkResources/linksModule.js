@@ -13,3 +13,16 @@ export async function postLinks(body) {
     [week, resource]
   );
 }
+
+export async function deleteLinksByID(id) {
+  console.log(id)
+  const data = await query(
+    "DELETE FROM links where id=$1 RETURNING *", [id]
+    )
+}
+
+export async function deleteAllLinks() {
+  const data = await query("DELETE FROM links;");
+}
+
+
