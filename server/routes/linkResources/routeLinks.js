@@ -24,7 +24,7 @@ routerLink.delete("/:id", async function (req, res) {
   let id = Number(req.params.id);
   const data = await functionality.deleteLinksByID(id);
   return res.json({ success: true, payload: { data } })
-})
+});
 
 // delete all links
 
