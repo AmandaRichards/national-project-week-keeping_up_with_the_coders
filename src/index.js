@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Router>
   <App />
-</BrowserRouter>,
+</Router>,
   document.getElementById('root')
 );
 
