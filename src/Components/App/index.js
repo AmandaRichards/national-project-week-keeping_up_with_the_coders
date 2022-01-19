@@ -9,7 +9,7 @@ import Login from "../Login/index.js";
 function App() {
   return (
    <div className="App">
-      <h1>Resource.log()</h1>
+      
 
       
    <Routes>

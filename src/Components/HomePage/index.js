@@ -1,7 +1,24 @@
 import React from 'react';
+import dummydata from './DummyData/DummyData';
+
+import Heading from './Heading';
+import Thumbnail from './Thumbnail';
 
 export default function HomePage() {
   return(
-    <h2>Hello, Koder</h2>
-  );
+    <div>
+    <Heading />
+    {dummydata.map(function (props){
+      return (
+        <Thumbnail
+        title={props.title}
+        url={props.url}
+        />
+      ) 
+    } 
+    
+    )}</div>
+
+    )
+  ;
 }
