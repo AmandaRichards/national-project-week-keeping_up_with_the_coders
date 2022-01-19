@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import './App.css';
 import HomePage from '../HomePage/index';
 import Login from "../Login/index.js";
+import Content from "../contentPage/index.js"
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Route path="homepage" element={<HomePage />} />
      
       </Routes>
-   
+    <Content/>
 
     </div>
   );

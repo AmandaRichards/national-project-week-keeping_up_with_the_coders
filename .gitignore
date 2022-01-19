@@ -2,8 +2,12 @@
 
 
 # dependencies
+<<<<<<< HEAD
 node_modules/
 server/node_modules
+=======
+node_modules
+>>>>>>> 09552dd8 (css react content-page set up)
 /.pnp
 .pnp.js
 
