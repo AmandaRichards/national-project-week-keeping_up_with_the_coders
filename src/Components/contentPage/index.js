@@ -15,11 +15,11 @@ function Content() {
             </a>
         </div>
         <div className="header-title">
-            <p>Week 1 React</p>
+            <p>Week 1 React hello</p>
         </div>
         <div className="header-logout">
            <a className="logout"href="/">
-               Log out
+               Log out 
            </a>
 
         </div>
