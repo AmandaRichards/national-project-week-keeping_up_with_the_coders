@@ -1,7 +1,8 @@
 import { useState } from "react";
 //import HomePage from "../HomePage"
+//import styled from "styled-components";
 import styled from "styled-components";
- import {Navigate, Router, Routes} from "react-router-dom"
+ //import {Navigate, Router, Routes} from "react-router-dom"
 
 
 
