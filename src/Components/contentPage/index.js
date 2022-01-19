@@ -7,7 +7,6 @@ import "./style.css"
 function Content() {
 
   return (<>
-      <h1>ContentPage</h1>
           {/* /////////////////////////////////////////////////////// */}
     <div className="header-content-page">
         <div className="back-to-home">
