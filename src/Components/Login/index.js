@@ -34,6 +34,7 @@ function Login() {
 
     }else{
         console.log("wrong password")
+        console.log("fail")
     }
   }
 
