@@ -23,5 +23,8 @@ server/node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 
 .env
+=======
+>>>>>>> 6fe9ff80 (error amended)

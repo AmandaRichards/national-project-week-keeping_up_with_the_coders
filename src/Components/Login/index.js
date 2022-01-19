@@ -43,7 +43,7 @@ function Login() {
 
     <div>
     <form value={loggedIn}>
-      <input onChange={handleNameChange} value={name} placeholder="enter your name"/>
+    <input onChange={handleNameChange} value={name} placeholder="enter your name"/>
       <input onChange={handleChange} value={password} />
       <button onClick={handleSubmit}>Submit</button>
     </form>
