@@ -1,8 +1,12 @@
-function Thumbnail({title, url}){
- return (<div>
-    <img src={url} alt="alt"/>
-    <p>{title}</p>
-</div> )
+import { Link } from "react-router-dom";
+
+function Thumbnail({ title, imageUrl, link }) {
+  return (
+    <div>
+      <img src={imageUrl} alt="alt" />
+      <Link to={link}>{title}</Link>
+    </div>
+  );
 }
 
 export default Thumbnail;

@@ -1,24 +1,22 @@
-import React from 'react';
-import dummydata from './DummyData/DummyData';
+import React from "react";
+import dummydata from "./DummyData/DummyData";
 
-import Heading from './Heading';
-import Thumbnail from './Thumbnail';
+import Heading from "./Heading";
+import Thumbnail from "./Thumbnail";
 
 export default function HomePage() {
-  return(
+  return (
     <div>
-    <Heading />
-    {dummydata.map(function (props){
-      return (
-        <Thumbnail
-        title={props.title}
-        url={props.url}
-        />
-      ) 
-    } 
-    
-    )}</div>
-
-    )
-  ;
+      <Heading />
+      {dummydata.map(function (props) {
+        return (
+          <Thumbnail
+            title={props.title}
+            imageUrl={props.imageUrl}
+            link={props.link}
+          />
+        );
+      })}
+    </div>
+  );
 }
