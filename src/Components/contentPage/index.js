@@ -5,16 +5,19 @@
 import "./style.css"
 import { useEffect } from 'react'
 
-const APIURL = process.env.DATABASE_URL;
+const APIURL = process.env.REACT_APP_API_URL;
 
 function Content() {
 
-    useEffect(function() {
-        async function fetchData (){
-            const response = await fetch (`${APIURL}/links`)
-            const data = await response.json();
-            console.log(data)
-        } fetchData()},[] )
+      async function fetchData (){
+            fetch (`${APIURL}/links`)
+                .then(res => res.text())   
+                .then(text => console.log(text))
+        }
+
+    useEffect(()=>{
+       fetchData()
+    },[] )
     
     
 
