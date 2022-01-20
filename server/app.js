@@ -4,6 +4,7 @@ import path, { dirname } from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import { fileURLToPath } from "url";
+import cors from "cors";
 //all links to routes
 import routerLink from "./routes/linkResources/routeLinks.js";
 import routerVideo from "./routes/videoResources/routesVideos.js";
@@ -23,7 +24,7 @@ app.use(cookieParser());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(cors())
 //path to individual database
 app.use("/links", routerLink);
 app.use("/videos", routerVideo);
@@ -45,5 +46,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
 
 export default app;
