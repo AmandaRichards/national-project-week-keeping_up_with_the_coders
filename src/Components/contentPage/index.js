@@ -1,18 +1,31 @@
 //import {useState} from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+//import { faHome } from '@fortawesome/free-solid-svg-icons'
 import "./style.css"
+import { useEffect } from 'react'
+
+const APIURL = process.env.DATABASE_URL;
 
 function Content() {
+
+    useEffect(function() {
+        async function fetchData (){
+            const response = await fetch (`${APIURL}/links`)
+            const data = await response.json();
+            console.log(data)
+        } fetchData()},[] )
+    
+    
+
 
   return (<>
           {/* /////////////////////////////////////////////////////// */}
     <div className="header-content-page">
         <div className="back-to-home">
             <a href="/">
-                <FontAwesomeIcon icon={faHome} />
-            </a>
+               {/* <FontAwesomeIcon icon={faHome} />*/}
+            </a> 
         </div>
         <div className="header-title">
             <p>Week 1 React hello</p>
@@ -43,7 +56,7 @@ function Content() {
                    </div>
                    <div className="icon-cross-container">
                     <a href="/">
-                        <FontAwesomeIcon icon={faTimesCircle} />
+                        {/* <FontAwesomeIcon icon={faTimesCircle} /> */}
                     </a>
                        
                    </div>
@@ -78,7 +91,7 @@ function Content() {
             </div>
                 <div className="icon-cross-container-video">
                     <a href="/">
-                        <FontAwesomeIcon icon={faTimesCircle} />
+                        {/* <FontAwesomeIcon icon={faTimesCircle} /> */}
                     </a>
                        
                    </div>
@@ -94,7 +107,7 @@ function Content() {
             </div>
                 <div className="icon-cross-container-video">
                     <a href="/">
-                        <FontAwesomeIcon icon={faTimesCircle} />
+                        {/* <FontAwesomeIcon icon={faTimesCircle} /> */}
                     </a>
                        
                    </div>
@@ -133,7 +146,7 @@ function Content() {
                    </div>
                    <div className="icon-cross-container">
                     <a href="/">
-                        <FontAwesomeIcon icon={faTimesCircle} />
+                        {/* <FontAwesomeIcon icon={faTimesCircle} /> */}
                     </a>
                        
                    </div>
