@@ -3,3 +3,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   border: 1px solid black;
 } */
+
+.tile {
+  padding: 40px 40px 40px;
+  width: 200px;
+}
