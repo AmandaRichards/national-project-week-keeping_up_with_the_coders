@@ -23,3 +23,4 @@ async function createLinks() {
   const res = await query(dataLinks);
 }
 createLinks();
+//he
