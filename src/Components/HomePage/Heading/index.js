@@ -1,5 +1,6 @@
-function Heading(){
- return   <h1>Welcome, Koders</h1>
+import "./index.css";
+function Heading() {
+  return <h1 className="heading">Welcome, Koders</h1>;
 }
 
 export default Heading;
