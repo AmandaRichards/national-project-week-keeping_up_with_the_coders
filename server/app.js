@@ -9,6 +9,7 @@ import cors from "cors";
 import routerLink from "./routes/linkResources/routeLinks.js";
 import routerVideo from "./routes/videoResources/routesVideos.js";
 import routerResources from "./routes/resourcesResources/routesResources.js";
+import bodyParser from "body-parser";
 // var usersRouter = require('./routes/users');
 
 var app = express();
@@ -29,6 +30,7 @@ app.use(cors())
 app.use("/links", routerLink);
 app.use("/videos", routerVideo);
 app.use("/resources", routerResources);
+
 
 
 // catch 404 and forward to error handler

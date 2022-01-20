@@ -1,7 +1,13 @@
 import { Router } from "express";
 import express from "express";
 import * as functionality from "../resourcesResources/resourcesModule.js";
+import bodyParser from 'body-parser';
 const routerResources = express.Router();
+
+const urlencodedParser =bodyParser.urlencoded({extended:false})
+
+
+
 
 routerResources.get("/", async function (req, res) {
   const responseResources = await functionality.getAllResources();
@@ -11,10 +17,10 @@ routerResources.get("/", async function (req, res) {
 
 
 // post resources
-routerResources.post("/", async function (req, res) {
-  const body = req.body;
-  console.log(body);
-  const responseResources = await functionality.postResources(body);
+routerResources.post("/", urlencodedParser, async function (req, res) {
+  const head = req.body;
+  console.log(head);
+  const responseResources = await functionality.postResources(head);
   return res.json({ success: true, payload: { responseResources } });
 });
 

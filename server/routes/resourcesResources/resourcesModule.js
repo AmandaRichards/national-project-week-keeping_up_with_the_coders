@@ -9,10 +9,12 @@ export async function getAllResources() {
 export async function postResources(body) {
   const week = body.week;
   const resource = body.type_of_resource;
+  console.log(body)
   const data = await query(
     "INSERT INTO resources(Week,Type_of_resource) VALUES($1,$2)",
     [week, resource]
   );
+  return data.rows
 }
 
 export async function deleteResourcesByID(id) {
