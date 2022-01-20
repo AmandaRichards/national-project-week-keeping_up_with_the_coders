@@ -4,8 +4,7 @@ export async function getAllResources() {
   const data = await query("SELECT * FROM resources;");
   return data.rows;
 }
-<<<<<<< HEAD
-=======
+
 
 export async function postResources(body) {
   const week = body.week;
@@ -26,4 +25,3 @@ export async function deleteResourcesByID(id) {
 export async function deleteAllResources() {
   const data = await query("DELETE FROM resources;");
 }
->>>>>>> 90f7cf46c857775728dc9d477892cdb366e44879

@@ -2,15 +2,6 @@ import express from "express";
 import * as functionality from "./videoModule.js";
 const routerVideo = express.Router();
 
-<<<<<<< HEAD
-routerVideo.get("/", async function (req, res) {
-  const responseVideo = await functionality.getAllVideo();
-  return res.json({ success: true, payload: { responseVideo } });
-});
-
-export default routerVideo;
-=======
-/* GET home page */
 routerVideo.get("/", async function (req, res) {
   const responseVideo = await functionality.getAllVideos();
   return res.json({ success: true, payload: { responseVideo } });
@@ -40,4 +31,3 @@ routerVideo.delete("/", async function (req, res) {
   return res.json({success:true,payload:{data}})
 
 });
->>>>>>> 90f7cf46c857775728dc9d477892cdb366e44879

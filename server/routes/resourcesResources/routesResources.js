@@ -3,19 +3,12 @@ import express from "express";
 import * as functionality from "../resourcesResources/resourcesModule.js";
 const routerResources = express.Router();
 
-<<<<<<< HEAD
-=======
-/* GET home page */
->>>>>>> 90f7cf46c857775728dc9d477892cdb366e44879
 routerResources.get("/", async function (req, res) {
   const responseResources = await functionality.getAllResources();
   return res.json({ success: true, payload: { responseResources } });
 });
-<<<<<<< HEAD
 
-export default routerResources;
-=======
-export default routerResources;
+
 
 // post resources
 routerResources.post("/", async function (req, res) {
@@ -41,5 +34,4 @@ routerResources.delete("/", async function (req, res) {
 
 });
 
-
->>>>>>> 90f7cf46c857775728dc9d477892cdb366e44879
+export default routerResources;
