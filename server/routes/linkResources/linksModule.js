@@ -12,9 +12,6 @@ export async function postLinks(body) {
     "INSERT INTO links(Week,Type_of_resource) VALUES($1,$2)",
     [week, resource]
   );
-<<<<<<< HEAD
-}
-=======
 }
 
 export async function deleteLinksByID(id) {
@@ -29,4 +26,3 @@ export async function deleteAllLinks() {
 }
 
 
->>>>>>> 90f7cf46c857775728dc9d477892cdb366e44879
