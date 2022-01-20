@@ -6,7 +6,9 @@ function Thumbnail({ title, imageUrl }) {
     <div>
       <img src={imageUrl} alt="alt" className="tile" />
       <br></br>
-      <Link to="/contentpage">{title}</Link>
+      <Link to="/contentpage" className="linkText">
+        {title}
+      </Link>
     </div>
   );
 }
