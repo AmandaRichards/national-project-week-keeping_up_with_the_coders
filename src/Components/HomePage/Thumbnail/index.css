@@ -3,3 +3,15 @@
   grid-template-columns: 1fr 1fr 1fr;
   border: 1px solid black;
 } */
+.tile {
+  padding: 60px 60px 60px;
+  width: 200px;
+}
+.linkText {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+.linkText:hover {
+  color: #19647E;
+}

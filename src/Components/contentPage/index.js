@@ -69,7 +69,7 @@ function Content() {
            
            {/* form */}
             <div className="formcontainer">
-                <form className="formResources" action="/">
+                <form className="formResources" action="http://localhost:9000/resources" method="post">
                     <input type="number" name="" id="" placeholder="Enter the week Number"required/>
                     <input type="text" placeholder="Enter Link to Resource"required/>
                     <input type="submit" className="submitBtn"/>
