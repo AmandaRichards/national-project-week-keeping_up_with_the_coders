@@ -7,9 +7,7 @@ import Login from "../Login/index.js";
 
 import Week1 from "./ContentPages/Week1";
 
-import Content from "../contentPage/index.js"
-
-
+import Content from "../contentPage/index.js";
 
 function App() {
   return (
@@ -21,12 +19,8 @@ function App() {
 </Route> */}
         <Route path="homepage" element={<HomePage />} />
         <Route path="week1" element={<Week1 />} />
+        <Route path="contentpage" element={<Content />} />
       </Routes>
-
-
-    <Content/>
-
-
     </div>
   );
 }

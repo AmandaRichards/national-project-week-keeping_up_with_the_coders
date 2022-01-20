@@ -5,7 +5,7 @@ function Thumbnail({ title, imageUrl }) {
   return (
     <div>
       <img src={imageUrl} alt="alt" />
-      <Link to="/week1">{title}</Link>
+      <Link to="/contentpage">{title}</Link>
     </div>
   );
 }
