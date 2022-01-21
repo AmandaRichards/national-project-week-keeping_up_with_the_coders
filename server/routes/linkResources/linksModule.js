@@ -5,13 +5,20 @@ export async function getAllLinks() {
   return data.rows;
 }
 
+export async function getAllWeeklyLinks(id) {
+  const data = await query("SELECT * FROM links WHERE week = $1 ;",[id]);
+  return data.rows;
+}
+
 export async function postLinks(body) {
   const week = body.week;
-  const resource = body.type_of_resource;
+  const resource = body.Type_of_resource;
   const data = await query(
     "INSERT INTO links(Week,Type_of_resource) VALUES($1,$2)",
     [week, resource]
   );
+
+  return data.rows
 }
 
 export async function deleteLinksByID(id) {

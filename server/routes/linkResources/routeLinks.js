@@ -1,20 +1,29 @@
+import bodyParser from 'body-parser';
 import { Router } from "express";
 import express from "express";
 import * as functionality from "../linkResources/linksModule.js";
 const routerLink = express.Router();
+const urlencodedParser =bodyParser.urlencoded({extended:false})
 
 /* GET home page. */
 routerLink.get("/", async function (req, res) {
   const responseLinks = await functionality.getAllLinks();
  return res.json({success:true,payload:{responseLinks}})
 });
-export default routerLink;
+
+routerLink.get("/:id", async function (req, res) {
+  const {id}=req.params;
+  const numToId=Number(id);
+  const responseLinks = await functionality.getAllWeeklyLinks(numToId);
+ return res.json({success:true,payload:{responseLinks}})
+});
+
 
 // post links 
-routerLink.post("/", async function (req, res) {
-  const body = req.body;
-  console.log(body);
-  const responseLinks = await functionality.postLinks(body);
+routerLink.post("/", urlencodedParser,async function (req, res) {
+  const head = req.body;
+  console.log(head);
+  const responseLinks = await functionality.postLinks(head);
   return res.json({ success: true, payload: { responseLinks } });
 });
 
@@ -34,4 +43,4 @@ routerLink.delete("/", async function (req, res) {
 
 });
 
-
+export default routerLink;
