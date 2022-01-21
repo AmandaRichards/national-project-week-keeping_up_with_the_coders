@@ -73,7 +73,7 @@ function Login({setUserName,setPassword,username,password}) {
          <input className="inputLogin" type="text" placeholder="Enter UserName" required onChange={(e)=> setUserName(e.target.value)} value={username}></input>
          <input className="inputLogin" type="text" placeholder="Enter Password" required onChange={(e)=> setPassword(e.target.value)} value={password}></input>
          <button id="submitlogin" type="submit" value="Enter">
-           <Link to="/homepage" className="linktext">Log In</Link>
+           <Link to="/homepage"  id="submitLoginText">Log In</Link>
          </button>
        </form>
      </div>

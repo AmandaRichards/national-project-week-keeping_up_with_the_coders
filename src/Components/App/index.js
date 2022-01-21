@@ -15,7 +15,7 @@ import Contentuser from "../contentpageuser";
 
 function App() {
   const [username, setUserName] = useState("");
-  const [password, setPassword] = useState("wh");
+  const [password, setPassword] = useState("");
   // console.log(takeme)
 
   //  function Takeme(e){

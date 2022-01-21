@@ -4,7 +4,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import "./style.css"
 import { useEffect,useState } from 'react'
-import { useLocation ,Links} from 'react-router-dom'
+import { useLocation ,Link} from 'react-router-dom'
 
 const APIURL = process.env.REACT_APP_API_URL;
 
