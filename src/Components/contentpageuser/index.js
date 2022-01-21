@@ -1,6 +1,6 @@
 //import {useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+// import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import "./style.css"
 import { useEffect,useState } from 'react'
@@ -21,7 +21,7 @@ function Contentpage() {
     const weekID=week.week
     console.log(weekID)
     //header 
-    const [banner,setBanner]=useState(header);
+    const banner=header;
     //getting info from resource form
     const [mapres,setMapRes] = useState([]);
 
@@ -188,12 +188,13 @@ function Contentpage() {
             // console.log(data.payload.responseResources)
             setMapLink(data.payload.responseLinks)
         }
-
+const [data, setData] = useState(0);
     useEffect(()=>{
        fetchData()
        fetchVideoData()
        fetchLinkData()
-    },[] )
+       setData(1)
+    },[data] )
     
     console.log(mapres)
     console.log(mapvideo)
@@ -237,7 +238,7 @@ function Contentpage() {
                     <div key={input.id} className="main-subs-container">
                     <div className="individual-container">
                         <div className="links-resources-container">
-                            <p className="resource-para">{input.type_of_resource} </p>
+                            <a className="resource-para" href={input.type_of_resource}>{input.type_of_resource} </a>
                         </div>
                         {/* <button className="icon-cross-container"  onClick={()=>{deleteIndividualRes(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
@@ -275,7 +276,7 @@ function Contentpage() {
                     return <>
                     <div key={input.id} className="container-video">
                         <div className="video-display">
-                            <iframe width="220" height="145" src={input.type_of_resource}>
+                            <iframe width="220" height="145" src={input.type_of_resource} title={input.id}>
                             </iframe>
                         </div>
                          {/* <button className="icon-cross-container-video" onClick={()=>{deleteIndividualVideo(input.id)}}>
@@ -289,13 +290,13 @@ function Contentpage() {
             </div>
            </div>
                      {/* form */}
-            <div className="formcontainer">
+            {/* <div className="formcontainer"> */}
                 {/* <form className="formlink" onSubmit={vidSubmit}>
                     <input type="number" name="" id="" placeholder="Enter the week Number" required onChange={(e)=> setWeekVideo(e.target.value) } value={weekvideo}/>
                     <input type="text" placeholder="Enter Link to Resource"required onChange={(e)=> setDataVideo(e.target.value)} value={datavideo}/>
                     <input type="submit" className="submitBtn"/>
                 </form> */}
-            </div>
+            {/* </div> */}
            {/* end of form */} 
         </div>
        {/* /////////////////////////////////////////////////////// */}
@@ -316,7 +317,7 @@ function Contentpage() {
                     <div key={input.id} className="main-subs-container">
                         <div className="individual-container">
                             <div className="links-links-container">
-                                <p className="links-para">{input.type_of_resource}</p>
+                                <a className="resource-para" href={input.type_of_resource}>{input.type_of_resource} </a>
                              </div>
                         {/* <button className="icon-cross-container" onClick={()=>{deleteIndividuallink(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
@@ -330,13 +331,13 @@ function Contentpage() {
            
            <div className="links-container-2">
            {/* form */}
-            <div className="formcontainer">
+            {/* <div className="formcontainer"> */}
                 {/* <form className="formlink" onSubmit={linkSubmit}>
                     <input type="number" name="" id="" placeholder="Enter the week Number"required onChange={(e)=> setWeekLink(e.target.value)} value={weeklink}/>
                     <input type="text" placeholder="Enter Link to Resource"required onChange={(e)=> setDataLink(e.target.value)} value={datalink}/>
                     <input type="submit" className="submitBtn"/>
                 </form> */}
-            </div>
+            {/* </div> */}
            {/* end of form */}
            </div>
        </div>

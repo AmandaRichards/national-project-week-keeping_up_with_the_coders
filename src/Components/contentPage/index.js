@@ -23,8 +23,8 @@ function Content() {
     //header 
     const banner=header;
     //getting info from resource form
-    const [weekres,setWeekRes]=useState("1");
-    const [datares,setDataRes]=useState("hello");
+    const [weekres,setWeekRes]=useState("");
+    const [datares,setDataRes]=useState("");
     const [mapres,setMapRes] = useState([]);
 
     async function resSubmit(e){
@@ -71,8 +71,8 @@ function Content() {
     }  
     // ///////////////////////////End of Resource post////////
     // ////////////////////////////start of video data////////////////
-    const [weekvideo,setWeekVideo]=useState("1");
-    const [datavideo,setDataVideo]=useState("hello");
+    const [weekvideo,setWeekVideo]=useState("");
+    const [datavideo,setDataVideo]=useState("");
     const [mapvideo,setMapVideo] = useState([]);
 
      async function vidSubmit(e){
@@ -119,8 +119,8 @@ function Content() {
     } 
      // ////////////////////////////end of video data////////////////
       // ////////////////////////////start of link data////////////////
-    const [weeklink,setWeekLink]=useState("1");
-    const [datalink,setDataLink]=useState("hello");
+    const [weeklink,setWeekLink]=useState("");
+    const [datalink,setDataLink]=useState("");
     const [maplink,setMapLink] = useState([]);
 
      async function linkSubmit(e){
@@ -190,14 +190,15 @@ function Content() {
             // console.log(data.payload.responseResources)
             setMapLink(data.payload.responseLinks)
         }
-//const [value, setValue] = useState(0);
-//const value1 =0; 
+
     useEffect(()=>{
        fetchData();
-       fetchVideoData();
-       fetchLinkData();
-       
-    }, [] )
+    fetchVideoData();
+    fetchLinkData();
+      
+    },[])
+
+    
     
     console.log(mapres)
     console.log(mapvideo)
@@ -238,7 +239,7 @@ function Content() {
                     <div key={input.id} className="main-subs-container">
                     <div className="individual-container">
                         <div className="links-resources-container">
-                            <p className="resource-para">{input.type_of_resource} </p>
+                            <a className="resource-para" href={input.type_of_resource}>{input.type_of_resource} </a>
                         </div>
                         <button className="icon-cross-container"  onClick={()=>{deleteIndividualRes(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
@@ -317,7 +318,7 @@ function Content() {
                     <div key={input.id} className="main-subs-container">
                         <div className="individual-container">
                             <div className="links-links-container">
-                                <p className="links-para">{input.type_of_resource}</p>
+                                <a className="links-para" href={input.type_of_resource}>{input.type_of_resource}</a>
                              </div>
                         <button className="icon-cross-container" onClick={()=>{deleteIndividuallink(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />

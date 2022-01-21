@@ -1,5 +1,5 @@
 import "./index.css";
-import{useState} from 'react';
+// import{useState} from 'react';
 function Heading({username}) {
   const what =username
   // const [name,setName]=useState(username)

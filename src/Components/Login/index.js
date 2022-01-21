@@ -4,8 +4,8 @@
 import { Link} from "react-router-dom"
 // import { useHistory } from "react-router-dom";
 import "./index.css"
-import {useState} from "react"
-import App from "../App";
+// import {useState} from "react"
+// import App from "../App";
 
 export let hello;
 function Login({setUserName,setPassword,username,password}) {
