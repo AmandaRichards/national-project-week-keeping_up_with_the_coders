@@ -21,7 +21,7 @@ function Content() {
     const weekID=week.week
     console.log(weekID)
     //header 
-    const [banner,setBanner]=useState(header);
+    const banner=header;
     //getting info from resource form
     const [weekres,setWeekRes]=useState("1");
     const [datares,setDataRes]=useState("hello");
@@ -31,7 +31,7 @@ function Content() {
         e.preventDefault()
 
         try{
-            let res = await fetch(`${APIURL}/resources`,{
+             await fetch(`${APIURL}/resources`,{
                 method: "POST",
                 headers:{
                     "Content-type":"application/json",
@@ -61,7 +61,7 @@ function Content() {
 
      async function deleteIndividualRes(id){
 
-         const response = await fetch(`${APIURL}/resources/${id}`,{
+          await fetch(`${APIURL}/resources/${id}`,{
             method:'DELETE'
             })
             .then((response)=>{response.json();
@@ -79,7 +79,7 @@ function Content() {
         e.preventDefault()
 
         try{
-            let res = await fetch(`${APIURL}/videos`,{
+            await fetch(`${APIURL}/videos`,{
                 method: "POST",
                 headers:{
                     "Content-type":"application/json",
@@ -109,7 +109,7 @@ function Content() {
 
      async function deleteIndividualVideo(id){
 
-         const response = await fetch(`${APIURL}/videos/${id}`,{
+          await fetch(`${APIURL}/videos/${id}`,{
             method:'DELETE'
             })
             .then((response)=>{response.json();
@@ -127,7 +127,7 @@ function Content() {
         e.preventDefault()
 
         try{
-            let res = await fetch(`${APIURL}/links`,{
+            await fetch(`${APIURL}/links`,{
                 method: "POST",
                 headers:{
                     "Content-type":"application/json",
@@ -157,7 +157,7 @@ function Content() {
 
     async function deleteIndividuallink(id){
 
-         const response = await fetch(`${APIURL}/links/${id}`,{
+         await fetch(`${APIURL}/links/${id}`,{
             method:'DELETE'
             })
             .then((response)=>{response.json();
@@ -190,12 +190,14 @@ function Content() {
             // console.log(data.payload.responseResources)
             setMapLink(data.payload.responseLinks)
         }
-
+//const [value, setValue] = useState(0);
+//const value1 =0; 
     useEffect(()=>{
-       fetchData()
-       fetchVideoData()
-       fetchLinkData()
-    },[] )
+       fetchData();
+       fetchVideoData();
+       fetchLinkData();
+       
+    }, [] )
     
     console.log(mapres)
     console.log(mapvideo)
@@ -274,7 +276,7 @@ function Content() {
                     return <>
                     <div key={input.id} className="container-video">
                         <div className="video-display">
-                            <iframe width="220" height="145" src={input.type_of_resource}>
+                            <iframe width="220" height="145" src={input.type_of_resource} title={input.id}>
                             </iframe>
                         </div>
                          <button className="icon-cross-container-video" onClick={()=>{deleteIndividualVideo(input.id)}}>
