@@ -9,7 +9,7 @@ import cors from "cors";
 import routerLink from "./routes/linkResources/routeLinks.js";
 import routerVideo from "./routes/videoResources/routesVideos.js";
 import routerResources from "./routes/resourcesResources/routesResources.js";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 // var usersRouter = require('./routes/users');
 
 var app = express();

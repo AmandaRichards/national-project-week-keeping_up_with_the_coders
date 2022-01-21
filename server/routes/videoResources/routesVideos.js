@@ -1,18 +1,29 @@
+import bodyParser from 'body-parser';
 import express from "express";
 import * as functionality from "./videoModule.js";
 const routerVideo = express.Router();
+
+const routerResources = express.Router();
+const urlencodedParser =bodyParser.urlencoded({extended:false})
 
 routerVideo.get("/", async function (req, res) {
   const responseVideo = await functionality.getAllVideos();
   return res.json({ success: true, payload: { responseVideo } });
 });
-export default routerVideo;
+
+routerVideo.get("/:id", async function (req, res) {
+  const {id}=req.params;
+  const numToId=Number(id);
+  const responseVideo = await functionality.getAllWeeklyVideos(numToId);
+  return res.json({ success: true, payload: { responseVideo } });
+});
+
 
 // post videos
-routerVideo.post("/", async function (req, res) {
-  const body = req.body;
-  console.log(body);
-  const responseVideos = await functionality.postVideos(body);
+routerVideo.post("/", urlencodedParser,async function (req, res) {
+  const head = req.body;
+  console.log(head);
+  const responseVideos = await functionality.postVideos(head);
   return res.json({ success: true, payload: { responseVideos } });
 });
 
@@ -21,7 +32,7 @@ routerVideo.post("/", async function (req, res) {
 routerVideo.delete("/:id", async function (req, res) {
   let id = Number(req.params.id);
   const data = await functionality.deleteVideosByID(id);
-  return res.json({ success: true, payload: { data } })
+  return res.json({redirect: "http://localhost:3000/contentpage"})
 })
 
 // delete all videos
@@ -31,3 +42,5 @@ routerVideo.delete("/", async function (req, res) {
   return res.json({success:true,payload:{data}})
 
 });
+
+export default routerVideo;
