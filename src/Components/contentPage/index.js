@@ -167,15 +167,45 @@ function Content() {
     } 
       // ////////////////////////////end of link data////////////////
     // ////////////////////////////start of get data////////////////
-    async function fetchData (){
+    // async function fetchData (){
+    //     const id=weekID;
+    //         const response = await fetch(`${APIURL}/resources/${id}`);
+    //         const data = await response.json();
+    //         // console.log(data.payload.responseResources)
+    //         setMapRes(data.payload.responseResources)
+    //     }
+
+    // async function fetchVideoData(){
+    //     const id=weekID;
+    //         const response = await fetch(`${APIURL}/videos/${id}`);
+    //         const data = await response.json();
+    //         // console.log(data.payload.responseResources)
+    //         setMapVideo(data.payload.responseVideo)
+    //     }
+
+    // async function fetchLinkData(){
+    //     const id=weekID;
+    //         const response = await fetch(`${APIURL}/links/${id}`);
+    //         const data = await response.json();
+    //         // console.log(data.payload.responseResources)
+    //         setMapLink(data.payload.responseLinks)
+    //     }
+
+    useEffect(()=>{
+         async function fetchData (){
         const id=weekID;
             const response = await fetch(`${APIURL}/resources/${id}`);
             const data = await response.json();
             // console.log(data.payload.responseResources)
             setMapRes(data.payload.responseResources)
         }
+       fetchData();
+   
+      
+    },[weekID])
 
-    async function fetchVideoData(){
+     useEffect(()=>{
+         async function fetchVideoData(){
         const id=weekID;
             const response = await fetch(`${APIURL}/videos/${id}`);
             const data = await response.json();
@@ -183,7 +213,11 @@ function Content() {
             setMapVideo(data.payload.responseVideo)
         }
 
-    async function fetchLinkData(){
+     fetchVideoData();
+    },[weekID]);
+
+      useEffect(()=>{
+           async function fetchLinkData(){
         const id=weekID;
             const response = await fetch(`${APIURL}/links/${id}`);
             const data = await response.json();
@@ -191,14 +225,8 @@ function Content() {
             setMapLink(data.payload.responseLinks)
         }
 
-    useEffect(()=>{
-       fetchData();
-    fetchVideoData();
     fetchLinkData();
-      
-    },[])
-
-    
+      }, [weekID]);
     
     console.log(mapres)
     console.log(mapvideo)
