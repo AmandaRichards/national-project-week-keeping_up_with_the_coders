@@ -1,17 +1,16 @@
 import * as React from "react";
 // import { BrowserRouter, Route, } from 'react-router-dom';
 import { Routes, Route } from "react-router-dom";
-import {useState} from "react"
+import { useState } from "react";
 import "../Login/index.css";
 // import HomePage from "../HomePage/index.js";
 //import { Link} from "react-router-dom"
 import Login from "../Login/index.js";
-import Content from "../contentPage/index.js"
+import Content from "../contentPage/index.js";
 import HomePage from "../HomePage";
 import Contentuser from "../contentpageuser";
 
 // import Week1 from "./ContentPages/Week1";
-
 
 function App() {
   const [username, setUserName] = useState("");
@@ -20,14 +19,14 @@ function App() {
 
   //  function Takeme(e){
   //   e.preventDefault()
-    
+
   //   console.log(password)
   //   // return <Redirect to='/homepage' />
   // }
-  
 
-  return (<>
-    {/* <div className="App">
+  return (
+    <>
+      {/* <div className="App">
       <div className="biggercontainer">
     <div className="poweredby">
     <h1>Powered By</h1>
@@ -55,10 +54,23 @@ function App() {
     </div>
     </div> */}
       <Routes>
-        <Route path="*" element={<Login setUserName={setUserName} setPassword={setPassword} username={username} password={password}/>} />
-        <Route path="/homepage" element={<HomePage username={username} password={password}/> } />
-        <Route path="/contentpage" element={ <Content/>} />
-        <Route path="/contentpageuser" element={ <Contentuser/>} />
+        <Route
+          path="*"
+          element={
+            <Login
+              setUserName={setUserName}
+              setPassword={setPassword}
+              username={username}
+              password={password}
+            />
+          }
+        />
+        <Route
+          path="/homepage"
+          element={<HomePage username={username} password={password} />}
+        />
+        <Route path="/contentpage" element={<Content />} />
+        <Route path="/contentpageuser" element={<Contentuser />} />
         {/* <Route exact path="/">
   {loggedIn ? <Navigate to="/homepage" /> : <HomePage />}
 </Route> */}
@@ -67,8 +79,7 @@ function App() {
       </Routes>
       {/* </div>
    </> */}
-  </>
-    
+    </>
   );
 }
 
