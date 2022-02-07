@@ -26,6 +26,7 @@ function Content() {
     const [weekres,setWeekRes]=useState("");
     const [datares,setDataRes]=useState("");
     const [mapres,setMapRes] = useState([]);
+    const [dummyRes,setDummyRes] =useState(0);
 
     async function resSubmit(e){
         e.preventDefault()
@@ -44,7 +45,7 @@ function Content() {
             }).then((res)=>{
                 res.json();
                 console.log(res);
-                window.location.reload(false);
+                // window.location.reload(false);
                 if(res.status === 200){
                     console.log(res.status)
                     setDataRes("");
@@ -56,7 +57,8 @@ function Content() {
             console.log(err);
         }
             // let resJson =await res.json();
-            // console.log(resJson)      
+            // console.log(resJson)  
+            dummyRes    
     }
 
      async function deleteIndividualRes(id){
@@ -65,7 +67,7 @@ function Content() {
             method:'DELETE'
             })
             .then((response)=>{response.json();
-                window.location.reload(false)})
+            })
             // .then((data)=> window.location.href=data.redirect)
      return ;
     }  
@@ -92,7 +94,7 @@ function Content() {
             }).then((res)=>{
                 res.json();
                 console.log(res);
-                window.location.reload(false);
+                
                 if(res.status === 200){
                     console.log(res.status)
                     setDataRes("");
@@ -113,7 +115,7 @@ function Content() {
             method:'DELETE'
             })
             .then((response)=>{response.json();
-                window.location.reload(false)})
+               })
             // .then((data)=> window.location.href=data.redirect)
      return ;
     } 
@@ -190,8 +192,43 @@ function Content() {
     //         // console.log(data.payload.responseResources)
     //         setMapLink(data.payload.responseLinks)
     //     }
+    // useEffect(()=>{
+    //      async function resSubmit(e){
+    //     e.preventDefault()
 
+    //     try{
+    //          await fetch(`${APIURL}/resources`,{
+    //             method: "POST",
+    //             headers:{
+    //                 "Content-type":"application/json",
+    //                 "Accept":"application/json"
+    //             },
+    //             body:JSON.stringify({
+    //                 week: weekres,
+    //                 Type_of_resource: datares,
+    //             }),
+    //         }).then((res)=>{
+    //             res.json();
+    //             console.log(res);
+    //             // window.location.reload(false);
+    //             if(res.status === 200){
+    //                 console.log(res.status)
+    //                 setDataRes("");
+    //                 setWeekRes("");
+                   
+    //         }}) 
+         
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    //         // let resJson =await res.json();
+    //         // console.log(resJson)
+                 
+    // } 
+    // resSubmit()
+    // },[])
     useEffect(()=>{
+       
          async function fetchData (){
         const id=weekID;
             const response = await fetch(`${APIURL}/resources/${id}`);
@@ -200,9 +237,9 @@ function Content() {
             setMapRes(data.payload.responseResources)
         }
        fetchData();
-   
+        setDummyRes()
       
-    },[weekID])
+    },[weekID,dummyRes])
 
      useEffect(()=>{
          async function fetchVideoData(){
@@ -214,7 +251,7 @@ function Content() {
         }
 
      fetchVideoData();
-    },[weekID]);
+    },[weekID,vidSubmit,deleteIndividualVideo]);
 
       useEffect(()=>{
            async function fetchLinkData(){
@@ -226,7 +263,7 @@ function Content() {
         }
 
     fetchLinkData();
-      }, [weekID]);
+      }, [weekID,linkSubmit,deleteIndividuallink]);
     
     console.log(mapres)
     console.log(mapvideo)
