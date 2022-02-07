@@ -165,36 +165,66 @@ function Contentpage() {
     // } 
       // ////////////////////////////end of link data////////////////
     // ////////////////////////////start of get data////////////////
-    async function fetchData (){
+    // async function fetchData (){
+    //     const id=weekID;
+    //         const response = await fetch(`${APIURL}/resources/${id}`);
+    //         const data = await response.json();
+    //         // console.log(data.payload.responseResources)
+    //         setMapRes(data.payload.responseResources)
+        //}
+
+    // async function fetchVideoData(){
+    //     const id=weekID;
+    //         const response = await fetch(`${APIURL}/videos/${id}`);
+    //         const data = await response.json();
+    //         // console.log(data.payload.responseResources)
+    //         setMapVideo(data.payload.responseVideo)
+    //     }
+
+    // async function fetchLinkData(){
+    //     const id=weekID;
+    //         const response = await fetch(`${APIURL}/links/${id}`);
+    //         const data = await response.json();
+    //         // console.log(data.payload.responseResources)
+    //         setMapLink(data.payload.responseLinks)
+    //     }
+const [data, setData] = useState(0);
+
+    useEffect(()=>{
+         async function fetchData (){
         const id=weekID;
             const response = await fetch(`${APIURL}/resources/${id}`);
             const data = await response.json();
             // console.log(data.payload.responseResources)
             setMapRes(data.payload.responseResources)
-        }
+        } fetchData()
+       
+    },[weekID] )
 
-    async function fetchVideoData(){
+    useEffect(()=>{
+        async function fetchVideoData(){
         const id=weekID;
             const response = await fetch(`${APIURL}/videos/${id}`);
             const data = await response.json();
             // console.log(data.payload.responseResources)
             setMapVideo(data.payload.responseVideo)
-        }
+        } fetchVideoData()
+    }, [weekID])
 
-    async function fetchLinkData(){
+
+    useEffect(()=>{
+        async function fetchLinkData(){
         const id=weekID;
             const response = await fetch(`${APIURL}/links/${id}`);
             const data = await response.json();
             // console.log(data.payload.responseResources)
             setMapLink(data.payload.responseLinks)
-        }
-const [data, setData] = useState(0);
-    useEffect(()=>{
-       fetchData()
-       fetchVideoData()
-       fetchLinkData()
+        }fetchLinkData()
+    }, [weekID])
+    //fetchData()
+       //fetchVideoData()
+       //fetchLinkData()
        setData(1)
-    },[data] )
     
     console.log(mapres)
     console.log(mapvideo)
@@ -355,5 +385,6 @@ const [data, setData] = useState(0);
     </div>
   </>);
 }
+
 
 export default Contentpage;
