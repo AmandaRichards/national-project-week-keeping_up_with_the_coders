@@ -1,15 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter} from "react-router-dom";
-import './index.css';
-import App from './Components/App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./Components/App";
+import reportWebVitals from "./reportWebVitals";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
   <BrowserRouter>
-  <App />
-</BrowserRouter>,
-  document.getElementById('root')
+    <Auth0Provider
+      domain="dev-1l7wc2nx.us.auth0.com"
+      clientId="IFPG0v4wF6eoxvIH0fDFVenjnJs8wlcH"
+      redirectUri={`${window.location.origin}/homepage`}
+    >
+      <App />
+    </Auth0Provider>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
