@@ -5,6 +5,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import "./style.css"
 import { useEffect,useState } from 'react'
 import { useLocation ,Link} from 'react-router-dom'
+import { LinkColumn } from '../LinkColumn'
 
 const APIURL = process.env.REACT_APP_API_URL;
 
@@ -44,7 +45,7 @@ function Content() {
             }).then((res)=>{
                 res.json();
                 console.log(res);
-                window.location.reload(false);
+                //window.location.reload(false);
                 if(res.status === 200){
                     console.log(res.status)
                     setDataRes("");
@@ -191,18 +192,18 @@ function Content() {
     //         setMapLink(data.payload.responseLinks)
     //     }
 
-    useEffect(()=>{
-         async function fetchData (){
-        const id=weekID;
-            const response = await fetch(`${APIURL}/resources/${id}`);
-            const data = await response.json();
-            // console.log(data.payload.responseResources)
-            setMapRes(data.payload.responseResources)
-        }
-       fetchData();
+    // useEffect(()=>{
+    //      async function fetchData (){
+    //     const id=weekID;
+    //         const response = await fetch(`${APIURL}/resources/${id}`);
+    //         const data = await response.json();
+    //         // console.log(data.payload.responseResources)
+    //         setMapRes(data.payload.responseResources)
+    //     }
+    //    fetchData();
    
       
-    },[weekID])
+    // },[weekID]) //moved to link
 
      useEffect(()=>{
          async function fetchVideoData(){
@@ -259,10 +260,12 @@ function Content() {
                 <div className="header-subs">
                     <p className="header-subs-text">Resources Link</p>
                 </div>
+                
             {/* end of header subs */}
-            <div className="resource-container-1">
+            <LinkColumn weekID={weekID} deleteIndividualRes={deleteIndividualRes}/>
+            {/* <div className="resource-container-1"> */}
             {/* container */}
-            {mapres.map((input)=>{
+            {/* {mapres.map((input)=>{
                 return<>    
                     <div key={input.id} className="main-subs-container">
                     <div className="individual-container">
@@ -275,9 +278,9 @@ function Content() {
                     </div>
                     </div>
                 </>
-                })}
+                })} */}
             {/* end of container */}
-            </div>
+            {/* </div> */}
             {/* form */}
             <div className="resource-container-2">
             <div className="formcontainer">
