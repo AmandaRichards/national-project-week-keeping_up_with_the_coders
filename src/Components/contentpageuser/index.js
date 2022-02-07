@@ -188,7 +188,7 @@ function Contentpage() {
     //         // console.log(data.payload.responseResources)
     //         setMapLink(data.payload.responseLinks)
     //     }
-const [data, setData] = useState(0);
+// const [data, setData] = useState(0);
 
     useEffect(()=>{
          async function fetchData (){
@@ -224,7 +224,7 @@ const [data, setData] = useState(0);
     //fetchData()
        //fetchVideoData()
        //fetchLinkData()
-       setData(1)
+    //    setData(1)
     
     console.log(mapres)
     console.log(mapvideo)

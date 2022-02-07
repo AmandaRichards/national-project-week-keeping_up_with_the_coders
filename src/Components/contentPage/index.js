@@ -43,12 +43,14 @@ function Content() {
                 }),
             }).then((res)=>{
                 res.json();
-                console.log(res);
-                window.location.reload(false);
+                // console.log(res);
+                // window.location.reload(false);
+                
                 if(res.status === 200){
                     console.log(res.status)
                     setDataRes("");
                     setWeekRes("");
+                    
                    
             }}) 
          
