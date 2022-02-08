@@ -23,10 +23,11 @@ function Content() {
     //header 
     const banner=header;
     //getting info from resource form
-    const [weekres,setWeekRes]=useState("");
+    const [weekres,setWeekRes]=useState(weekID);
     const [datares,setDataRes]=useState("");
     const [mapres,setMapRes] = useState([]);
     const [dummyRes,setDummyRes] =useState(0);
+    const [dummyDeleteRes, setDummyDeleteRes] =useState(0);
 
     async function resSubmit(e){
         e.preventDefault()
@@ -49,7 +50,7 @@ function Content() {
                 if(res.status === 200){
                     console.log(res.status)
                     setDataRes("");
-                    setWeekRes("");
+                    setWeekRes(weekID);
                    
             }}) 
          
@@ -58,7 +59,12 @@ function Content() {
         }
             // let resJson =await res.json();
             // console.log(resJson)  
-            dummyRes    
+           if(dummyRes<10){
+               setDummyRes(dummyRes+1)
+           }else{
+               setDummyRes(0)
+           }
+           console.log(dummyRes)
     }
 
      async function deleteIndividualRes(id){
@@ -69,13 +75,20 @@ function Content() {
             .then((response)=>{response.json();
             })
             // .then((data)=> window.location.href=data.redirect)
+            if(dummyDeleteRes<10){
+               setDummyDeleteRes(dummyDeleteRes+1)
+            }else{
+               setDummyDeleteRes(0)
+            }
      return ;
     }  
     // ///////////////////////////End of Resource post////////
     // ////////////////////////////start of video data////////////////
-    const [weekvideo,setWeekVideo]=useState("");
+    const [weekvideo,setWeekVideo]=useState(weekID);
     const [datavideo,setDataVideo]=useState("");
     const [mapvideo,setMapVideo] = useState([]);
+    const [dummyVid,setDummyVid] =useState(0);
+    const [dummyDeleteVid, setDummyDeleteVid] =useState(0);
 
      async function vidSubmit(e){
         e.preventDefault()
@@ -98,7 +111,7 @@ function Content() {
                 if(res.status === 200){
                     console.log(res.status)
                     setDataRes("");
-                    setWeekRes("");
+                    setWeekRes(weekID);
                    
             }}) 
          
@@ -106,7 +119,12 @@ function Content() {
             console.log(err);
         }
             // let resJson =await res.json();
-            // console.log(resJson)      
+            // console.log(resJson)  
+            if(dummyVid<10){
+               setDummyVid(dummyVid+1)
+            }else{
+               setDummyVid(0)
+            }    
     }
 
      async function deleteIndividualVideo(id){
@@ -117,13 +135,21 @@ function Content() {
             .then((response)=>{response.json();
                })
             // .then((data)=> window.location.href=data.redirect)
+            if(dummyDeleteVid<10){
+               setDummyDeleteVid(dummyDeleteVid+1)
+            }else{
+               setDummyDeleteVid(0)
+            }
      return ;
     } 
      // ////////////////////////////end of video data////////////////
       // ////////////////////////////start of link data////////////////
-    const [weeklink,setWeekLink]=useState("");
+    const [weeklink,setWeekLink]=useState(weekID);
     const [datalink,setDataLink]=useState("");
     const [maplink,setMapLink] = useState([]);
+    const [dummylink,setDummyLink] =useState(0);
+    const [dummyDeleteLink, setDummyDeleteLink] =useState(0);
+      
 
      async function linkSubmit(e){
         e.preventDefault()
@@ -142,11 +168,11 @@ function Content() {
             }).then((res)=>{
                 res.json();
                 console.log(res);
-                window.location.reload(false);
+                // window.location.reload(false);
                 if(res.status === 200){
                     console.log(res.status)
                     setDataRes("");
-                    setWeekRes("");
+                    setWeekRes(weekID);
                    
             }}) 
          
@@ -154,7 +180,12 @@ function Content() {
             console.log(err);
         }
             // let resJson =await res.json();
-            // console.log(resJson)      
+            // console.log(resJson)
+            if(dummylink<10){
+               setDummyLink(dummylink+1)
+            }else{
+               setDummyLink(0)
+            }   
     }
 
     async function deleteIndividuallink(id){
@@ -163,8 +194,13 @@ function Content() {
             method:'DELETE'
             })
             .then((response)=>{response.json();
-                window.location.reload(false)})
+                })
             // .then((data)=> window.location.href=data.redirect)
+            if(dummyDeleteLink<10){
+               setDummyDeleteLink(dummyDeleteLink + 1)
+            }else{
+               setDummyDeleteLink(0)
+            }
      return ;
     } 
       // ////////////////////////////end of link data////////////////
@@ -176,6 +212,7 @@ function Content() {
     //         // console.log(data.payload.responseResources)
     //         setMapRes(data.payload.responseResources)
     //     }
+       
 
     // async function fetchVideoData(){
     //     const id=weekID;
@@ -236,12 +273,12 @@ function Content() {
             // console.log(data.payload.responseResources)
             setMapRes(data.payload.responseResources)
         }
-       fetchData();
-        setDummyRes()
+      fetchData()
+        
       
-    },[weekID,dummyRes])
+    },[weekID,dummyRes,dummyDeleteRes])
 
-     useEffect(()=>{
+    useEffect(()=>{
          async function fetchVideoData(){
         const id=weekID;
             const response = await fetch(`${APIURL}/videos/${id}`);
@@ -251,9 +288,9 @@ function Content() {
         }
 
      fetchVideoData();
-    },[weekID,vidSubmit,deleteIndividualVideo]);
+    },[weekID,dummyVid,dummyDeleteVid]);
 
-      useEffect(()=>{
+    useEffect(()=>{
            async function fetchLinkData(){
         const id=weekID;
             const response = await fetch(`${APIURL}/links/${id}`);
@@ -263,7 +300,7 @@ function Content() {
         }
 
     fetchLinkData();
-      }, [weekID,linkSubmit,deleteIndividuallink]);
+      }, [weekID,dummylink,dummyDeleteLink]);
     
     console.log(mapres)
     console.log(mapvideo)
