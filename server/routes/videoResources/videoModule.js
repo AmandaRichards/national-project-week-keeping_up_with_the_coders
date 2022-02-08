@@ -14,9 +14,10 @@ export async function getAllWeeklyVideos(id) {
 export async function postVideos(body) {
   const week = body.week;
   const resource = body.Type_of_resource;
+  const title = body.Name_of_resource;
   const data = await query(
-    "INSERT INTO videos(Week,Type_of_resource) VALUES($1,$2)",
-    [week, resource]
+    "INSERT INTO videos(Week, Name_of_resource, Type_of_resource) VALUES($1,$2, $3)",
+    [week, title, resource]
   );
 
   return data.rows
