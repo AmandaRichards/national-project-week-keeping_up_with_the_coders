@@ -349,7 +349,7 @@ function Content() {
                     <div key={input.id} className="main-subs-container">
                     <div className="individual-container">
                         <div className="links-resources-container">
-                            <a className="resource-para" href={input.type_of_resource}>{input.name_of_resource} </a>
+                            <a className="resource-para" href={input.type_of_resource}  target="_blank" rel="noopener noreferrer">{input.name_of_resource} </a>
                         </div>
                         <button className="icon-cross-container"  onClick={()=>{deleteIndividualRes(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
@@ -364,9 +364,9 @@ function Content() {
             <div className="resource-container-2">
             <div className="formcontainer">
                 <form className="formResources" onSubmit={resSubmit}>
-                    <input type="number" value={weekres} placeholder="Enter the week Number" required onChange={(e)=> setWeekRes(e.target.value)}/>
-                    <input type="text" value={titleres} placeholder="Enter the Resource name" required onChange={(e)=> setTitleRes(e.target.value)}/>
-                    <input type="text" value={datares} placeholder="Enter Link to Resource" required onChange={(e)=> setDataRes(e.target.value)}/>
+                    <input type="number" value={weekres} placeholder="Enter the week number" required onChange={(e)=> setWeekRes(e.target.value)}/>
+                    <input type="text" value={titleres} placeholder="Enter the resource title" required onChange={(e)=> setTitleRes(e.target.value)}/>
+                    <input type="text" value={datares} placeholder="Enter link to resource" required onChange={(e)=> setDataRes(e.target.value)}/>
                     
                     <input type="submit" className="submitBtn"/>
                 </form>
@@ -405,9 +405,9 @@ function Content() {
                      {/* form */}
             <div className="formcontainer">
                 <form className="formlink" onSubmit={vidSubmit}>
-                    <input type="number" name="" id="" placeholder="Enter the week Number" required onChange={(e)=> setWeekVideo(e.target.value) } value={weekvideo}/>
+                    <input type="number" name="" id="" placeholder="Enter the week number" required onChange={(e)=> setWeekVideo(e.target.value) } value={weekvideo}/>
                     <input type="text" placeholder="Enter the resource title"required onChange={(e)=> setTitleVideo(e.target.value)} value={titlevideo}/>
-                    <input type="text" placeholder="Enter Link to Resource"required onChange={(e)=> setDataVideo(e.target.value)} value={datavideo}/>
+                    <input type="text" placeholder="Enter link to resource"required onChange={(e)=> setDataVideo(e.target.value)} value={datavideo}/>
                     <input type="submit" className="submitBtn"/>
                 </form>
             </div>
@@ -431,7 +431,7 @@ function Content() {
                     <div key={input.id} className="main-subs-container">
                         <div className="individual-container">
                             <div className="links-links-container">
-                                <a className="links-para" href={input.type_of_resource}>{input.name_of_resource}</a>
+                                <a className="links-para" href={input.type_of_resource}  target="_blank" rel="noopener noreferrer">{input.name_of_resource}</a>
                              </div>
                         <button className="icon-cross-container" onClick={()=>{deleteIndividuallink(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
@@ -447,9 +447,9 @@ function Content() {
            {/* form */}
             <div className="formcontainer">
                 <form className="formlink" onSubmit={linkSubmit}>
-                    <input type="number" name="" id="" placeholder="Enter the week Number"required onChange={(e)=> setWeekLink(e.target.value)} value={weeklink}/>
-                    <input type="text" placeholder="Enter the resource name"required onChange={(e)=> setTitleLink(e.target.value)} value={titleLink}/>
-                    <input type="text" placeholder="Enter Link to Resource"required onChange={(e)=> setDataLink(e.target.value)} value={datalink}/>
+                    <input type="number" name="" id="" placeholder="Enter the week number"required onChange={(e)=> setWeekLink(e.target.value)} value={weeklink}/>
+                    <input type="text" placeholder="Enter the resource title"required onChange={(e)=> setTitleLink(e.target.value)} value={titleLink}/>
+                    <input type="text" placeholder="Enter link to resource"required onChange={(e)=> setDataLink(e.target.value)} value={datalink}/>
                     <input type="submit" className="submitBtn"/>
                 </form>
             </div>
