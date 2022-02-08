@@ -2,15 +2,16 @@ import "./index.css";
 // import{useState} from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 
-function Heading({ username }) {
-  const what = username;
-  const { logout } = useAuth0();
+function Heading() {
+  // const what = username;
+  const { logout, user, isAuthenticated } = useAuth0();
+
   // const [name,setName]=useState(username)
   return (
-    <>
+    isAuthenticated && (
       <div className="header-homepage-page">
         <div className="header-title-homepage">
-          <p>Welcome, {what}</p>
+          <p>Welcome, {user.name}</p>
         </div>
         <div className="header-logout-homepage">
           <button onClick={() => logout({ returnTo: window.location.origin })}>
@@ -18,8 +19,7 @@ function Heading({ username }) {
           </button>
         </div>
       </div>
-      {/* <h1 className="heading">Welcome, Bootcamper</h1>; */}
-    </>
+    )
   );
 }
 export default Heading;
