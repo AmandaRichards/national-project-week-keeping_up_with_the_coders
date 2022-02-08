@@ -21,7 +21,7 @@ function Thumbnail({ title, imageUrl,week ,password, username}) {
         </Link>
         }
         } */}
-        {password === "admin" ? <Link to="/contentpage" className="linkText" state={{ title: {title},week:{week} }}><div>{title}</div></Link>: <Link to="/contentpageuser" state={{ title: {title},week:{week} }}>
+        {password === "admin" ? <Link to="/contentpage" className="linkText" state={{ title: {title},week:{week} }}><div>{title}</div></Link>: <Link to="/contentpageuser" className="linkText" state={{ title: {title},week:{week} }}>
             <div>{title}</div>
         </Link>}
       </div>
