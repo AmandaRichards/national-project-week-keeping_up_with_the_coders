@@ -32,12 +32,17 @@
     margin-right:2rem;
     transition: all .3s;
     cursor: pointer;
-    
-
 }
+
 .header-logout-homepage:hover{
     background-color: tomato;
     transition: all .3s;
+    
+}
+
+.header-logout-homepage p{
+    color: white;
+    cursor: pointer;
     
 }
 

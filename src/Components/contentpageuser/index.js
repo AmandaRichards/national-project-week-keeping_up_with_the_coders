@@ -5,10 +5,14 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import "./style.css"
 import { useEffect,useState } from 'react'
 import { useLocation,Link } from 'react-router-dom'
+import {useAuth0} from "@auth0/auth0-react";
 
 const APIURL = process.env.REACT_APP_API_URL;
 
 function Contentpage() {
+    //Authzero  logout
+    const { logout } = useAuth0();
+//end authzero logout
     const location = useLocation();
     const {title} = location.state
     const {week}=location.state
@@ -243,12 +247,9 @@ function Contentpage() {
         <div className="header-title">
             <p>{banner}</p>
         </div>
-        <div className="header-logout">
-           <a className="logout"href="/">
-               Log out 
-           </a>
-
-        </div>
+        <button className="header-logout" onClick={() => logout({ returnTo: window.location.origin })}>
+            <p>Log Out</p>
+          </button>
     </div>
        {/* /////////////////////////////////////////////////////// */}
    <div className="container"> 
