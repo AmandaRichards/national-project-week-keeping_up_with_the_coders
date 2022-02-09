@@ -65,6 +65,10 @@
     
 }
 
+.header-logout p{
+    color:white;
+}
+
 .logout{
     font-size:18px;
     text-decoration: none;

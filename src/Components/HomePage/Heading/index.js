@@ -13,11 +13,11 @@ function Heading() {
         <div className="header-title-homepage">
           <p>Welcome, {user.name}</p>
         </div>
-        <div className="header-logout-homepage">
-          <button onClick={() => logout({ returnTo: window.location.origin })}>
-            Log Out
+        
+          <button className="header-logout-homepage" onClick={() => logout({ returnTo: window.location.origin })}>
+            <p>Log Out</p>
           </button>
-        </div>
+        
       </div>
     )
   );

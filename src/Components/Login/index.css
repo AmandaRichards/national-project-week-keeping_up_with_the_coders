@@ -93,16 +93,7 @@ h1 {
     margin-top:4rem;
     width:400px;
 }
-.inputLogin{
-    /* background-color: yellow; */
-    margin-top:1rem;
-    margin-bottom:1rem;
-    width:325px;
-    height:43px;
-    font-size:24px;
-    border-radius: 5px;
-    border:1px solid #9DD9D2;
-}
+
 #submitlogin{
     margin-top:3rem;
     width:325px;
@@ -113,6 +104,11 @@ h1 {
     color:white;
     border: none;
 }
+#submitlogin:hover{
+    background-color: tomato;
+    transition: all .3s;  
+}
+
 
 #submitloginText{
     margin-top:3rem;

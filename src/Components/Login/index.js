@@ -7,6 +7,7 @@ import "./index.css";
 // import {useState} from "react"
 // import App from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
+import correct from "../Img/correct.png"
 
 export let hello;
 function Login({ setUserName, setPassword, username, password }) {
@@ -81,12 +82,11 @@ function Login({ setUserName, setPassword, username, password }) {
                 Log
               </Link> */}
 
-              <form className="login-form">
-                
+                <img src={correct} alt="Israelasked me too"></img>
                 <button id="submitlogin" onClick={() => loginWithRedirect()}>
                   Log In
                 </button>
-              </form>
+            
 
             </div>
           </div>
