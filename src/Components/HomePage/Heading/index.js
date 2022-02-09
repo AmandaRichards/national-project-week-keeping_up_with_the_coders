@@ -11,7 +11,7 @@ function Heading() {
     isAuthenticated && (
       <div className="header-homepage-page">
         <div className="header-title-homepage">
-          <p>Welcome, {user.name} {user["https://example.com/roles"][0]}</p>
+          <p>Welcome, {user.name}</p>
         </div>
         <div className="header-logout-homepage">
           <button onClick={() => logout({ returnTo: window.location.origin })}>
