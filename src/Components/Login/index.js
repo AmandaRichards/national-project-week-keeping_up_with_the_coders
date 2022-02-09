@@ -82,31 +82,12 @@ function Login({ setUserName, setPassword, username, password }) {
               </Link> */}
 
               <form className="login-form">
-                <input
-                  className="inputLogin"
-                  type="text"
-                  placeholder="Enter UserName"
-                  required
-                  onChange={(e) => setUserName(e.target.value)}
-                  value={username}
-                ></input>
-                <input
-                  className="inputLogin"
-                  type="text"
-                  placeholder="Enter Password"
-                  required
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                ></input>
-                <button id="submitlogin" type="submit" value="Enter">
-                  <Link to="/homepage" id="submitLoginText">
-                    Log in as guest
-                  </Link>
-                </button>
-                <button onClick={() => loginWithRedirect()}>
-                  Log In as admin
+                
+                <button id="submitlogin" onClick={() => loginWithRedirect()}>
+                  Log In
                 </button>
               </form>
+
             </div>
           </div>
         </div>
