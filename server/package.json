@@ -14,6 +14,9 @@
     "pg": "^8.7.1"
   },
   "scripts": {
-    "dev": "nodemon -r dotenv/config ./bin/www.js"
+    "dev": "nodemon -r dotenv/config ./bin/www.js",
+    "createTable": "node -r dotenv/config  ./db/scripts/createTable.js",
+    "deleteTable": "node -r dotenv/config  ./db/scripts/deleteTable.js",
+    "populateTable": "node -r dotenv/config  ./db/scripts/populateTable.js"
   }
 }

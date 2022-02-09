@@ -18,11 +18,12 @@ export async function getAllResources(id) {
 export async function postResources(body) {
   const week = body.week;
   const resource = body.Type_of_resource;
+  const title = body.Name_of_resource;
   // console.log(week)
   // console.log(resource)
   const data = await query(
-    "INSERT INTO resources(Week,Type_of_resource) VALUES($1,$2)",
-    [week, resource]
+    "INSERT INTO resources(Week, Name_of_resource, Type_of_resource) VALUES($1,$2, $3)",
+    [week, title, resource]
   );
   return data.rows
 }
