@@ -25,6 +25,7 @@ function Content() {
     //getting info from resource form
     const [weekres,setWeekRes]=useState(weekID);
     const [datares,setDataRes]=useState("");
+    const [titleres, setTitleRes]=useState("");
     const [mapres,setMapRes] = useState([]);
     const [dummyRes,setDummyRes] =useState(0);
     const [dummyDeleteRes, setDummyDeleteRes] =useState(0);
@@ -42,6 +43,7 @@ function Content() {
                 body:JSON.stringify({
                     week: weekres,
                     Type_of_resource: datares,
+                    Name_of_resource: titleres,
                 }),
             }).then((res)=>{
                 res.json();
@@ -51,6 +53,7 @@ function Content() {
                     console.log(res.status)
                     setDataRes("");
                     setWeekRes(weekID);
+                    setTitleRes("");
                    
             }}) 
          
@@ -86,6 +89,7 @@ function Content() {
     // ////////////////////////////start of video data////////////////
     const [weekvideo,setWeekVideo]=useState(weekID);
     const [datavideo,setDataVideo]=useState("");
+    const [titlevideo, setTitleVideo]=useState("");
     const [mapvideo,setMapVideo] = useState([]);
     const [dummyVid,setDummyVid] =useState(0);
     const [dummyDeleteVid, setDummyDeleteVid] =useState(0);
@@ -103,6 +107,7 @@ function Content() {
                 body:JSON.stringify({
                     week: weekvideo,
                     Type_of_resource: datavideo,
+                    Name_of_resource: titlevideo,
                 }),
             }).then((res)=>{
                 res.json();
@@ -112,6 +117,7 @@ function Content() {
                     console.log(res.status)
                     setDataRes("");
                     setWeekRes(weekID);
+                   
                    
             }}) 
          
@@ -146,6 +152,7 @@ function Content() {
       // ////////////////////////////start of link data////////////////
     const [weeklink,setWeekLink]=useState(weekID);
     const [datalink,setDataLink]=useState("");
+    const [titleLink, setTitleLink]=useState("");
     const [maplink,setMapLink] = useState([]);
     const [dummylink,setDummyLink] =useState(0);
     const [dummyDeleteLink, setDummyDeleteLink] =useState(0);
@@ -164,6 +171,7 @@ function Content() {
                 body:JSON.stringify({
                     week: weeklink,
                     Type_of_resource: datalink,
+                    Name_of_resource: titleLink,
                 }),
             }).then((res)=>{
                 res.json();
@@ -341,7 +349,7 @@ function Content() {
                     <div key={input.id} className="main-subs-container">
                     <div className="individual-container">
                         <div className="links-resources-container">
-                            <a className="resource-para" href={input.type_of_resource}>{input.type_of_resource} </a>
+                            <a className="resource-para" href={input.type_of_resource}  target="_blank" rel="noopener noreferrer">{input.name_of_resource} </a>
                         </div>
                         <button className="icon-cross-container"  onClick={()=>{deleteIndividualRes(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
@@ -356,8 +364,10 @@ function Content() {
             <div className="resource-container-2">
             <div className="formcontainer">
                 <form className="formResources" onSubmit={resSubmit}>
-                    <input type="number" value={weekres} placeholder="Enter the week Number" required onChange={(e)=> setWeekRes(e.target.value)}/>
-                    <input type="text" value={datares} placeholder="Enter Link to Resource" required onChange={(e)=> setDataRes(e.target.value)}/>
+                    <input type="number" value={weekres} placeholder="Enter the week number" required onChange={(e)=> setWeekRes(e.target.value)}/>
+                    <input type="text" value={titleres} placeholder="Enter the resource title" required onChange={(e)=> setTitleRes(e.target.value)}/>
+                    <input type="text" value={datares} placeholder="Enter link to resource" required onChange={(e)=> setDataRes(e.target.value)}/>
+                    
                     <input type="submit" className="submitBtn"/>
                 </form>
             </div>
@@ -395,8 +405,9 @@ function Content() {
                      {/* form */}
             <div className="formcontainer">
                 <form className="formlink" onSubmit={vidSubmit}>
-                    <input type="number" name="" id="" placeholder="Enter the week Number" required onChange={(e)=> setWeekVideo(e.target.value) } value={weekvideo}/>
-                    <input type="text" placeholder="Enter Link to Resource"required onChange={(e)=> setDataVideo(e.target.value)} value={datavideo}/>
+                    <input type="number" name="" id="" placeholder="Enter the week number" required onChange={(e)=> setWeekVideo(e.target.value) } value={weekvideo}/>
+                    <input type="text" placeholder="Enter the resource title"required onChange={(e)=> setTitleVideo(e.target.value)} value={titlevideo}/>
+                    <input type="text" placeholder="Enter link to resource"required onChange={(e)=> setDataVideo(e.target.value)} value={datavideo}/>
                     <input type="submit" className="submitBtn"/>
                 </form>
             </div>
@@ -420,7 +431,7 @@ function Content() {
                     <div key={input.id} className="main-subs-container">
                         <div className="individual-container">
                             <div className="links-links-container">
-                                <a className="links-para" href={input.type_of_resource}>{input.type_of_resource}</a>
+                                <a className="links-para" href={input.type_of_resource}  target="_blank" rel="noopener noreferrer">{input.name_of_resource}</a>
                              </div>
                         <button className="icon-cross-container" onClick={()=>{deleteIndividuallink(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
@@ -436,8 +447,9 @@ function Content() {
            {/* form */}
             <div className="formcontainer">
                 <form className="formlink" onSubmit={linkSubmit}>
-                    <input type="number" name="" id="" placeholder="Enter the week Number"required onChange={(e)=> setWeekLink(e.target.value)} value={weeklink}/>
-                    <input type="text" placeholder="Enter Link to Resource"required onChange={(e)=> setDataLink(e.target.value)} value={datalink}/>
+                    <input type="number" name="" id="" placeholder="Enter the week number"required onChange={(e)=> setWeekLink(e.target.value)} value={weeklink}/>
+                    <input type="text" placeholder="Enter the resource title"required onChange={(e)=> setTitleLink(e.target.value)} value={titleLink}/>
+                    <input type="text" placeholder="Enter link to resource"required onChange={(e)=> setDataLink(e.target.value)} value={datalink}/>
                     <input type="submit" className="submitBtn"/>
                 </form>
             </div>
