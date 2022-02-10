@@ -269,7 +269,7 @@ function Contentpage() {
                     <div key={input.id} className="main-subs-container">
                     <div className="individual-container">
                         <div className="links-resources-container">
-                            <a className="resource-para" href={input.type_of_resource}>{input.type_of_resource} </a>
+                            <a className="resource-para" href={input.type_of_resource} target="_blank" rel="noopener noreferrer">{input.type_of_resource} </a>
                         </div>
                         {/* <button className="icon-cross-container"  onClick={()=>{deleteIndividualRes(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
@@ -348,7 +348,7 @@ function Contentpage() {
                     <div key={input.id} className="main-subs-container">
                         <div className="individual-container">
                             <div className="links-links-container">
-                                <a className="resource-para" href={input.type_of_resource}>{input.type_of_resource} </a>
+                                <a className="resource-para" href={input.type_of_resource} target="_blank" rel="noopener noreferrer">{input.type_of_resource} </a>
                              </div>
                         {/* <button className="icon-cross-container" onClick={()=>{deleteIndividuallink(input.id)}}>
                                 <FontAwesomeIcon icon={faTimesCircle} />
