@@ -11,7 +11,7 @@ ReactDOM.render(
     <Auth0Provider
       domain="dev-1l7wc2nx.us.auth0.com"
       clientId="IFPG0v4wF6eoxvIH0fDFVenjnJs8wlcH"
-      redirectUri={`${window.location.origin}/homepage`}
+      redirectUri="https://resourcelog.netlify.app/homepage"
     >
       <App />
     </Auth0Provider>
