@@ -64,8 +64,6 @@ function Content() {
         } catch (err) {
             console.log(err);
         }
-            // let resJson =await res.json();
-            // console.log(resJson)  
            if(dummyRes<10){
                setDummyRes(dummyRes+1)
            }else{
@@ -217,65 +215,7 @@ function Content() {
     } 
       // ////////////////////////////end of link data////////////////
     // ////////////////////////////start of get data////////////////
-    // async function fetchData (){
-    //     const id=weekID;
-    //         const response = await fetch(`${APIURL}/resources/${id}`);
-    //         const data = await response.json();
-    //         // console.log(data.payload.responseResources)
-    //         setMapRes(data.payload.responseResources)
-    //     }
-       
-
-    // async function fetchVideoData(){
-    //     const id=weekID;
-    //         const response = await fetch(`${APIURL}/videos/${id}`);
-    //         const data = await response.json();
-    //         // console.log(data.payload.responseResources)
-    //         setMapVideo(data.payload.responseVideo)
-    //     }
-
-    // async function fetchLinkData(){
-    //     const id=weekID;
-    //         const response = await fetch(`${APIURL}/links/${id}`);
-    //         const data = await response.json();
-    //         // console.log(data.payload.responseResources)
-    //         setMapLink(data.payload.responseLinks)
-    //     }
-    // useEffect(()=>{
-    //      async function resSubmit(e){
-    //     e.preventDefault()
-
-    //     try{
-    //          await fetch(`${APIURL}/resources`,{
-    //             method: "POST",
-    //             headers:{
-    //                 "Content-type":"application/json",
-    //                 "Accept":"application/json"
-    //             },
-    //             body:JSON.stringify({
-    //                 week: weekres,
-    //                 Type_of_resource: datares,
-    //             }),
-    //         }).then((res)=>{
-    //             res.json();
-    //             console.log(res);
-    //             // window.location.reload(false);
-    //             if(res.status === 200){
-    //                 console.log(res.status)
-    //                 setDataRes("");
-    //                 setWeekRes("");
-                   
-    //         }}) 
-         
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    //         // let resJson =await res.json();
-    //         // console.log(resJson)
-                 
-    // } 
-    // resSubmit()
-    // },[])
+    /
     useEffect(()=>{
        
          async function fetchData (){
@@ -328,12 +268,7 @@ function Content() {
         <div className="header-title">
             <p>{banner}</p>
         </div>
-        {/* <div className="header-logout">
-           <a className="logout"href="/">
-               Log out 
-           </a>
-
-        </div> */}
+      
          <button className="header-logout" onClick={() => logout({ returnTo: window.location.origin })}>
             <p>Log Out</p>
           </button>

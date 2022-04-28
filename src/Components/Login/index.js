@@ -1,57 +1,11 @@
-// import { useState } from "react";
-//import { Router, Route, Navigate, Redirect, Switch} from "react-router-dom";
-//import HomePage from "../HomePage"
 import { Link } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
 import "./index.css";
-// import {useState} from "react"
-// import App from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
 import correct from "../Img/correct.png"
 
 export let hello;
 function Login({ setUserName, setPassword, username, password }) {
-  // const history = useHistory();
-  // const [username, setUserName] = useState("hello");
-  // const [password, setPassword] = useState("wh");
-  // hello=password;
-  //Needs to be in the login page
-  // const [loggedIn, setLoggedIn] = useState(false)
-  //   function handleNameChange(event){
-  //       setName(event.target.value);
-  //   }
-  //  function handleChange(event) {
-  //     setPassword(event.target.value);
-  //   }
-  //   function handleSubmit(event) {
-  // Stop the page from refreshing as the form will try and submit and refresh by default
-  // event.preventDefault();
-  //onSubmitClick(password);
-  // if(password === "Koder"){
-  //     console.log("correct password");
-  //     setLoggedIn(true);
-  // }else{
-  //     console.log("wrong password")
-  //     console.log("fail")
-  // }
-  // }
-
-  //   const renderLinkIf = (content, condition, href) => {
-  //   if (condition) {
-  //     return (<Link to={href}>{content}</Link>);
-  //   }
-  //   return (content);
-  // };
-  //   function Takeme(e){
-  //     e.preventDefault()
-  //     let lord=password
-  //     return lord;
-  //     // console.log(password)
-  //     // return <Redirect to='/homepage' />
-  // }
-
-  // console.log(username)
-
+ 
   const { loginWithRedirect } = useAuth0();
 
   return (
@@ -78,9 +32,7 @@ function Login({ setUserName, setPassword, username, password }) {
               <h2>Resource.log()</h2>
             </div>
             <div className="rightside">
-              {/* <Link to="/homepage" className="linktext">
-                Log
-              </Link> */}
+             
 
                 <img src={correct} alt="Israelasked me too"></img>
                 <button id="submitlogin" onClick={() => loginWithRedirect()}>
@@ -92,7 +44,7 @@ function Login({ setUserName, setPassword, username, password }) {
           </div>
         </div>
       </div>
-      {/* <App  takeme={Takeme}/> */}
+     
     </>
   );
 }

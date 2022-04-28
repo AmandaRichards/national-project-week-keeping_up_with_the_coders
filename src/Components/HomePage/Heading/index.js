@@ -3,10 +3,9 @@ import "./index.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function Heading() {
-  // const what = username;
+
   const { logout, user, isAuthenticated } = useAuth0();
-  // console.log(user["https://example.com/roles"][0])
-  // const [name,setName]=useState(username)
+  
   return (
     isAuthenticated && (
       <div className="header-homepage-page">

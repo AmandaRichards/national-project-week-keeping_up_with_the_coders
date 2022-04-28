@@ -29,171 +29,19 @@ function Contentpage() {
     //getting info from resource form
     const [mapres,setMapRes] = useState([]);
 
-    // async function resSubmit(e){
-    //     e.preventDefault()
-
-    //     try{
-    //         let res = await fetch(`${APIURL}/resources`,{
-    //             method: "POST",
-    //             headers:{
-    //                 "Content-type":"application/json",
-    //                 "Accept":"application/json"
-    //             },
-    //             body:JSON.stringify({
-    //                 week: weekres,
-    //                 Type_of_resource: datares,
-    //             }),
-    //         }).then((res)=>{
-    //             res.json();
-    //             console.log(res);
-    //             window.location.reload(false);
-    //             if(res.status === 200){
-    //                 console.log(res.status)
-    //                 setDataRes("");
-    //                 setWeekRes("");
-                   
-    //         }}) 
-         
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    //         // let resJson =await res.json();
-    //         // console.log(resJson)      
-    // }
-
-    //  async function deleteIndividualRes(id){
-
-    //      const response = await fetch(`${APIURL}/resources/${id}`,{
-    //         method:'DELETE'
-    //         })
-    //         .then((response)=>{response.json();
-    //             window.location.reload(false)})
-    //         // .then((data)=> window.location.href=data.redirect)
-    //  return ;
-    // }  
+   
     // ///////////////////////////End of Resource post////////
     // ////////////////////////////start of video data////////////////
-    // const [weekvideo,setWeekVideo]=useState("1");
-    // const [datavideo,setDataVideo]=useState("hello");
+   
     const [mapvideo,setMapVideo] = useState([]);
 
-    //  async function vidSubmit(e){
-    //     e.preventDefault()
-
-    //     try{
-    //         let res = await fetch(`${APIURL}/videos`,{
-    //             method: "POST",
-    //             headers:{
-    //                 "Content-type":"application/json",
-    //                 "Accept":"application/json"
-    //             },
-    //             body:JSON.stringify({
-    //                 week: weekvideo,
-    //                 Type_of_resource: datavideo,
-    //             }),
-    //         }).then((res)=>{
-    //             res.json();
-    //             console.log(res);
-    //             window.location.reload(false);
-    //             if(res.status === 200){
-    //                 console.log(res.status)
-    //                 setDataRes("");
-    //                 setWeekRes("");
-                   
-    //         }}) 
-         
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    //         // let resJson =await res.json();
-    //         // console.log(resJson)      
-    // }
-
-    //  async function deleteIndividualVideo(id){
-
-    //      const response = await fetch(`${APIURL}/videos/${id}`,{
-    //         method:'DELETE'
-    //         })
-    //         .then((response)=>{response.json();
-    //             window.location.reload(false)})
-            // .then((data)=> window.location.href=data.redirect)
-    //  return ;
-    // } 
+   
      // ////////////////////////////end of video data////////////////
       // ////////////////////////////start of link data////////////////
-    // const [weeklink,setWeekLink]=useState("1");
-    // const [datalink,setDataLink]=useState("hello");
+   
     const [maplink,setMapLink] = useState([]);
 
-    //  async function linkSubmit(e){
-    //     e.preventDefault()
-
-    //     try{
-    //         let res = await fetch(`${APIURL}/links`,{
-    //             method: "POST",
-    //             headers:{
-    //                 "Content-type":"application/json",
-    //                 "Accept":"application/json"
-    //             },
-    //             body:JSON.stringify({
-    //                 week: weeklink,
-    //                 Type_of_resource: datalink,
-    //             }),
-    //         }).then((res)=>{
-    //             res.json();
-    //             console.log(res);
-    //             window.location.reload(false);
-    //             if(res.status === 200){
-    //                 console.log(res.status)
-    //                 setDataRes("");
-    //                 setWeekRes("");
-                   
-    //         }}) 
-         
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    //         // let resJson =await res.json();
-    //         // console.log(resJson)      
-    // }
-
-    // async function deleteIndividuallink(id){
-
-    //      const response = await fetch(`${APIURL}/links/${id}`,{
-    //         method:'DELETE'
-    //         })
-    //         .then((response)=>{response.json();
-    //             window.location.reload(false)})
-    //         // .then((data)=> window.location.href=data.redirect)
-    //  return ;
-    // } 
-      // ////////////////////////////end of link data////////////////
-    // ////////////////////////////start of get data////////////////
-    // async function fetchData (){
-    //     const id=weekID;
-    //         const response = await fetch(`${APIURL}/resources/${id}`);
-    //         const data = await response.json();
-    //         // console.log(data.payload.responseResources)
-    //         setMapRes(data.payload.responseResources)
-        //}
-
-    // async function fetchVideoData(){
-    //     const id=weekID;
-    //         const response = await fetch(`${APIURL}/videos/${id}`);
-    //         const data = await response.json();
-    //         // console.log(data.payload.responseResources)
-    //         setMapVideo(data.payload.responseVideo)
-    //     }
-
-    // async function fetchLinkData(){
-    //     const id=weekID;
-    //         const response = await fetch(`${APIURL}/links/${id}`);
-    //         const data = await response.json();
-    //         // console.log(data.payload.responseResources)
-    //         setMapLink(data.payload.responseLinks)
-    //     }
-
-
+    
     useEffect(()=>{
          async function fetchData (){
         const id=weekID;
@@ -225,10 +73,7 @@ function Contentpage() {
             setMapLink(data.payload.responseLinks)
         }fetchLinkData()
     }, [weekID])
-    //fetchData()
-       //fetchVideoData()
-       //fetchLinkData()
-       
+   
     
     console.log(mapres)
     console.log(mapvideo)
@@ -239,9 +84,7 @@ function Contentpage() {
           {/* /////////////////////////////////////////////////////// */}
     <div className="header-content-page">
         <div className="back-to-home">
-            {/* <a href="/homepage">
-               <FontAwesomeIcon icon={faHome} />
-            </a>  */}
+          
             <Link to="/homepage" className="linktext"><FontAwesomeIcon icon={faHome} /></Link>
         </div>
         <div className="header-title">
@@ -271,9 +114,7 @@ function Contentpage() {
                         <div className="links-resources-container">
                             <a className="resource-para" href={input.type_of_resource} target="_blank" rel="noopener noreferrer">{input.name_of_resource} </a>
                         </div>
-                        {/* <button className="icon-cross-container"  onClick={()=>{deleteIndividualRes(input.id)}}>
-                                <FontAwesomeIcon icon={faTimesCircle} />
-                        </button> */}
+                        
                     </div>
                     </div>
                 </>
@@ -282,13 +123,7 @@ function Contentpage() {
             </div>
             {/* form */}
             <div className="resource-container-2">
-            {/* <div className="formcontainer">
-                <form className="formResources" onSubmit={resSubmit}>
-                    <input type="number" value={weekres} placeholder="Enter the week Number" required onChange={(e)=> setWeekRes(e.target.value)}/>
-                    <input type="text" value={datares} placeholder="Enter Link to Resource" required onChange={(e)=> setDataRes(e.target.value)}/>
-                    <input type="submit" className="submitBtn"/>
-                </form>
-            </div> */}
+ 
            {/* end of form */}
             </div>
        </div>
@@ -310,9 +145,7 @@ function Contentpage() {
                             <iframe width="220" height="145" src={input.type_of_resource} title={input.id}>
                             </iframe>
                         </div>
-                         {/* <button className="icon-cross-container-video" onClick={()=>{deleteIndividualVideo(input.id)}}>
-                                <FontAwesomeIcon icon={faTimesCircle} />
-                        </button> */}
+                     
                         </div>
                     </>
                 })}
@@ -320,15 +153,7 @@ function Contentpage() {
                 {/* map through end*/}
             </div>
            </div>
-                     {/* form */}
-            {/* <div className="formcontainer"> */}
-                {/* <form className="formlink" onSubmit={vidSubmit}>
-                    <input type="number" name="" id="" placeholder="Enter the week Number" required onChange={(e)=> setWeekVideo(e.target.value) } value={weekvideo}/>
-                    <input type="text" placeholder="Enter Link to Resource"required onChange={(e)=> setDataVideo(e.target.value)} value={datavideo}/>
-                    <input type="submit" className="submitBtn"/>
-                </form> */}
-            {/* </div> */}
-           {/* end of form */} 
+             
         </div>
        {/* /////////////////////////////////////////////////////// */}
        {/* links container */}
@@ -350,9 +175,7 @@ function Contentpage() {
                             <div className="links-links-container">
                                 <a className="resource-para" href={input.type_of_resource} target="_blank" rel="noopener noreferrer">{input.name_of_resource} </a>
                              </div>
-                        {/* <button className="icon-cross-container" onClick={()=>{deleteIndividuallink(input.id)}}>
-                                <FontAwesomeIcon icon={faTimesCircle} />
-                         </button> */}
+ 
                         </div>
                     </div>
                     </>
@@ -361,15 +184,7 @@ function Contentpage() {
            </div>
            
            <div className="links-container-2">
-           {/* form */}
-            {/* <div className="formcontainer"> */}
-                {/* <form className="formlink" onSubmit={linkSubmit}>
-                    <input type="number" name="" id="" placeholder="Enter the week Number"required onChange={(e)=> setWeekLink(e.target.value)} value={weeklink}/>
-                    <input type="text" placeholder="Enter Link to Resource"required onChange={(e)=> setDataLink(e.target.value)} value={datalink}/>
-                    <input type="submit" className="submitBtn"/>
-                </form> */}
-            {/* </div> */}
-           {/* end of form */}
+        
            </div>
        </div>
        {/* End of list container */}
