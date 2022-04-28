@@ -215,7 +215,7 @@ function Content() {
     } 
       // ////////////////////////////end of link data////////////////
     // ////////////////////////////start of get data////////////////
-    /
+    
     useEffect(()=>{
        
          async function fetchData (){

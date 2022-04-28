@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./index.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import correct from "../Img/correct.png"
